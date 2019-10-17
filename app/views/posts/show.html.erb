@@ -1,0 +1,62 @@
+<p class="notice"><%= raw(notice) %></p>
+ 
+<h1>Post</h1> 
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+ 
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+ 
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+ 
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@post) %>
+</p>
+
+<hr>
+ 
+<h2>Comments</h2>
+<%= render :partial => "comments/comment",
+           :collection => @post.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<hr>
+
+<h2>Versions</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @versions.each do |version| %>
+      <% if version.object %>
+        <tr>
+          <td><%= version.id %></td>
+            <td><%= version.whodunnit %></td>
+          <td><button><%= link_to 'Show Version', show_version_path(version.id, :id => @post.id) %></button></td>
+        </tr>
+      <% end %>
+    <% end %>  
+  </tbody>
+</table>
+
+<hr>
+ 
+ 
+<%= link_to 'Edit Post', edit_post_path(@post) %> |
+<%= link_to 'Back to Posts', posts_path %> |

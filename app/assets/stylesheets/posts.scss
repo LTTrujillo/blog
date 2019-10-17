@@ -1,0 +1,29 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+// thead th, tfoot th {
+//   font-family: 'Rock Salt', cursive;
+// }
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+

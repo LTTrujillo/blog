@@ -1,0 +1,25 @@
+
+<h1>One to One version tracking</h1>
+ 
+ 
+<h2>Post</h2> 
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+ 
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+ 
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Revert Version', revert_version_path(@vid, @current_id), :method => :post %> |
+<%= link_to 'Back to Post', post_path(@post) %> |
+
+
